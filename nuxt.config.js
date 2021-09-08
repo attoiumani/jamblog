@@ -1,5 +1,4 @@
-
-
+import axios from 'axios'
 export default {
   /*
   ** Nuxt rendering mode
@@ -62,8 +61,8 @@ export default {
   generate: {
     async routes() {
       const pages = await axios
-        .get('https://your-service-id.microcms.io/api/v1/blog?limit=100', {
-          headers: { 'X-API-KEY': 'your-api-key' }
+        .get('https://bbb.microcms.io/api/v1/blog?limit=100', {
+          headers: { 'X-API-KEY': 'b946077c-5861-4db6-bb26-9cf8d183dedf' }
         })
         .then((res) =>
           res.data.contents.map((content) => ({
@@ -73,5 +72,5 @@ export default {
         )
       return pages
     }
-
+  }
 }
