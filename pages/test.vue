@@ -29,7 +29,7 @@ export default {
         })
         .then((res) => {
           // 取得したコンテンツをコンポーネントのdata内に格納
-          this.headerItems = res.data.contents;
+          this.headerItems = res;
           this.id = res.data.contents[0].id;
           // 取得したアイテムをシャッフル
           for (let i = this.headerItems.length - 1; i > 0; i--) {
@@ -43,6 +43,30 @@ export default {
           console.log(err);
         });
     },
+    /*
+        getHeaders() {
+      // Git管理しないAPIキーは、.envファイル内にて別途定義する
+      // オプションとして、コンテンツの最大取得件数は100件と設定
+      axios
+        .get("https://bbb.microcms.io/api/v1/blog/5713hak9-aju", {
+          headers: { "X-API-KEY": "b946077c-5861-4db6-bb26-9cf8d183dedf" },
+        })
+        .then((res) => {
+          // 取得したコンテンツをコンポーネントのdata内に格納
+          this.headerItems = res;
+          this.id = res.data.id;
+          // 取得したアイテムをシャッフル
+          for (let i = this.headerItems.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const tmp = this.headerItems[i];
+            this.headerItems[i] = this.headerItems[j];
+            this.headerItems[j] = tmp;
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },*/ 
   },
 };
 </script>
