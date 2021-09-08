@@ -24,7 +24,7 @@ export default {
       // Git管理しないAPIキーは、.envファイル内にて別途定義する
       // オプションとして、コンテンツの最大取得件数は100件と設定
       axios
-        .get("https://bbb.microcms.io/api/v1/blog", {
+        .get("https://bbb.microcms.io/api/v1/blog/", {
           headers: { "X-API-KEY": "b946077c-5861-4db6-bb26-9cf8d183dedf" },
         })
         .then((res) => {
