@@ -1,7 +1,8 @@
 <template>
   <div>
     <p>all：{{ headerItems }}</p>
-    <p>ID：{{ id }}</p>
+    <p>1つ目：{{ headerItems[0]}}</p>
+    <p>ID：{{ headerItems[0].id}}</p>
   </div>
 </template>
 
@@ -12,7 +13,6 @@ export default {
     return {
       // APIを叩いて返ってきたコンテンツを格納する用に空の配列を用意
       headerItems: Array,
-      id: Array,
     };
   },
   mounted() {
@@ -29,15 +29,7 @@ export default {
         })
         .then((res) => {
           // 取得したコンテンツをコンポーネントのdata内に格納
-          this.headerItems = res;
-          this.id = res.data.contents[0].id;
-          // 取得したアイテムをシャッフル
-          for (let i = this.headerItems.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            const tmp = this.headerItems[i];
-            this.headerItems[i] = this.headerItems[j];
-            this.headerItems[j] = tmp;
-          }
+          this.headerItems = res.data.contents;
         })
         .catch((err) => {
           console.log(err);
