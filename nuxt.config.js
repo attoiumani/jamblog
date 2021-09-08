@@ -1,4 +1,5 @@
 
+
 export default {
   /*
   ** Nuxt rendering mode
@@ -57,5 +58,20 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-  }
+  },
+  generate: {
+    async routes() {
+      const pages = await axios
+        .get('https://your-service-id.microcms.io/api/v1/blog?limit=100', {
+          headers: { 'X-API-KEY': 'your-api-key' }
+        })
+        .then((res) =>
+          res.data.contents.map((content) => ({
+            route: `/${content.id}`,
+            payload: content
+          }))
+        )
+      return pages
+    }
+
 }
