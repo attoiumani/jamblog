@@ -4,7 +4,6 @@
       <nuxt-link :to="`/${content.id}`">
         {{ content.title }}
       </nuxt-link>
-      {{data}}
     </li>
     <NuxtLink to="/test">apitest</NuxtLink>
   </ul>
