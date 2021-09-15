@@ -2,7 +2,6 @@
   <div>
     <Header />
     <Newarticle />
-    <NuxtLink to="/test">apitest</NuxtLink>
   </div>
 </template>
 
