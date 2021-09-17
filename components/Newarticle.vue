@@ -1,6 +1,6 @@
 <template>
 <div>
-  <p>新着</p>
+  <h1>新着</h1>
   <ul>
     <li v-for="content in contents" :key="content.id">
       <nuxt-link :to="`/${content.id}`">
@@ -39,5 +39,12 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h1{
+  text-align: center;
+}
+h1:hover{
+  color: rgb(192, 31, 31);
 }
 </style>
