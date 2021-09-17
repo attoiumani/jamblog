@@ -1,18 +1,18 @@
 <template>
   <div>
-    <Header />
+    <Hea />
     <Newarticle />
   </div>
 </template>
 
 <script>
 import Newarticle from "@/components/Newarticle";
-import Header from "@/components/Header";
+import Hea from "@/components/Hea";
 
 export default {
   components: {
     Newarticle,
-    Header
+    Hea
   },
 };
 </script>
